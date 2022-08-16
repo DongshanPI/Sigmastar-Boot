@@ -1151,7 +1151,7 @@ include/config/uboot.release: include/config/auto.conf FORCE
 	@echo '  GCC version: $(shell $(CC) -dumpversion)'
 	@echo '  MVXV'
 	@echo chip_id $(MS_PLATFORM_ID)
-	@python ms_gen_mvxv_h.py include/ms_version.h --comp_id CM_UBT1501 \
+	@python2 ms_gen_mvxv_h.py include/ms_version.h --comp_id CM_UBT1501 \
                 --changelist g$$(git log --format=%h -n 1) --chip_id $(MS_PLATFORM_ID)
 #	@python ms_gen_mvxv_h.py include/ms_version.h --comp_id PLT_UBT1501 \
 		--changelist G$$(git describe --match CL* --tags --long | cut -b 12-18 |  awk '{print toupper($$0)}')
